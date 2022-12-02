@@ -9,4 +9,11 @@ public class meo {
         this.catAge = catAge;
     }
 
+    @Override
+    public String toString() {
+        return "meo{" +
+                "catName='" + catName + '\'' +
+                ", catAge=" + catAge +
+                '}';
+    }
 }
