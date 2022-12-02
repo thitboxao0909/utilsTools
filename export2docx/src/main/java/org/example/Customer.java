@@ -1,9 +1,23 @@
 package org.example;
 
+import org.docx4j.wml.Style;
+
+import java.util.List;
+
 public class Customer {
     private String name;
     private String address;
     private String email;
+
+    private List<meo> meo;
+
+    public List<meo> getLstMeo() {
+        return meo;
+    }
+
+    public void setLstMeo(List<meo> meo) {
+        this.meo = meo;
+    }
 
     public Customer(String name, String address, String email) {
         this.name = name;

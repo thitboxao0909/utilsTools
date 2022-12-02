@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="s2h">
+    <output-path>$PROJECT_DIR$/out/artifacts/s2hFX</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="org.example.Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="swagger2html" />
+        <option name="vendor" value="" />
+        <option name="version" value="" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="s2h.jar">
+        <element id="module-output" name="s2h" />
+      </element>
+      <element id="library" level="project" name="lib" />
+    </root>
+  </artifact>
+</component>

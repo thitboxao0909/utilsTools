@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="documentObjectXML")
@@ -12,6 +13,15 @@ public class documentObjectOutput implements Serializable {
     private String email;
     private String address;
 
+    private List<meo> meo;
+
+    public List<org.example.meo> getMeo() {
+        return meo;
+    }
+
+    public void setMeo(List<org.example.meo> meo) {
+        this.meo = meo;
+    }
 
     public String getFileTemplatePath() {
         return fileTemplatePath;
