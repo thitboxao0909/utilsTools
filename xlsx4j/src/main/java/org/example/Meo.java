@@ -1,18 +1,15 @@
 package org.example;
 
-import io.github.millij.poi.ss.model.annotations.SheetColumn;
-
 public class Meo {
 
-    @SheetColumn("Name")
     private String name;
 
-    @SheetColumn("Age")
     private Integer Age;
+
 
     public Meo(String name, Integer age) {
         this.name = name;
-        Age = age;
+        this.Age = age;
     }
 
     public String getName() {
