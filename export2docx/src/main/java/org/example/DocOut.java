@@ -37,7 +37,6 @@ public class DocOut {
     }
 
 
-
     public static void genWord(Object o,String pathTem, String pathOut) throws Exception{
         String xml = fwdObjectToXML( o);
         System.out.println("xml==============================" + xml);
@@ -97,7 +96,6 @@ public class DocOut {
         //System.out.println("Saved: " + pathOut);
         return outStream;
     }
-
     public static OutputStream genWordWithPassword(Object o,String pathTem, String password) throws Exception{
         String xml = fwdObjectToXML( o);
         System.out.println("xml==============================" + xml);
