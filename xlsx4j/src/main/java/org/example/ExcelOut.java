@@ -20,16 +20,18 @@ public class ExcelOut {
 
         // Meo
         final String[] catName = {"Tom", "Jerry", "Fish", "Muop", "MeoBeo", "Den", "Trang", "Tam the", "Catty Mc CatFace", "C","Doremon","Nobita", "Map"};
+        final String[] catBreeds = {"Ta", "Sphynx", "EnglishShorthair", "Siamese", "Burmese", "Doremon", "Persian", "Birman", "JapaneseBobTail"};
         List<Meo> Meo = new ArrayList<Meo>();
         Random random = new Random();
-        for (int i = 0; i < 300; i++) {
-            int index = random.nextInt(catName.length);
-            Meo m = new Meo(catName[index], random.nextInt(10));
+        for (int i = 0; i < 5000; i++) {
+            int indexName = random.nextInt(catName.length);
+            int indexBreed = random.nextInt(catBreeds.length);
+            Meo m = new Meo(catName[indexName], random.nextInt(10), catBreeds[indexBreed]);
             Meo.add(m);
         }
-        Meo.add(new Meo("Tom", 1));
-        Meo.add(new Meo("Jerry", 3));
-        Meo.add(new Meo("Muop", 2));
+        Meo.add(new Meo("Tom", 1, "Ta"));
+        Meo.add(new Meo("Jerry", 3, "Chuot"));
+        Meo.add(new Meo("Muop", 2, "Doremon"));
 
         Field[] listField =  Meo.get(0).getClass().getDeclaredFields();
         List<String> fieldNames = new ArrayList<>();
