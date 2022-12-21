@@ -252,4 +252,33 @@ public class ExcelOut {
         // Saving the Excel file
         workbook.save(pathOut);
     }
+    public OutputStream ExcelOutputStreamOutResultSet(ResultSet rs,
+                                             Integer firstRow,
+                                             Integer firstColumn,
+                                             Integer sheetNum,
+                                             String pathTemplate,
+                                             String pathOut) throws Exception {
+        FileOutputStream outputStream = new FileOutputStream(pathOut);
+        Workbook workbook = new Workbook(pathTemplate);
+        Worksheet worksheet = workbook.getWorksheets().get(sheetNum == null ? 0 : sheetNum);
+
+        int size = 0;
+        while (rs.next()) {
+            size++;
+        }
+        String[][] rsArray = new String[size][rs.getMetaData().getColumnCount()];
+
+        int i=0;
+        while (rs.next()) {
+
+            for (int j = 0; j < rs.getMetaData().getColumnCount(); j++) {
+                rsArray[i][j] = rs.getString(j+1);
+            }
+            i++;
+        }
+        worksheet.getCells().importArray(rsArray, 0, 0);
+        // Saving the Excel file
+        workbook.save(outputStream, new XpsSaveOptions(FileFormatType.XLSX));
+        return outputStream;
+    }
 }
